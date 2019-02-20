@@ -7,7 +7,34 @@
   </head>
   <body>
     <div id="root">
-      <h1>Hola mundo!</h1>
+      <h1>Generador de Mensajes Cifrados</h1>
+      <p>Este generador te permite cifrar y descrifar texto empleando un sistema de desplazamiento.</p>
+      <button id="generate-btn">Codificar</button>
+      <button id="decode-btn">Decodificar</button>
+    </div>
+    <!--this block is for entering the text for encoding-->
+    <div id="generateBlock" class="none">
+      <form>
+        <label for="originText">Ingrese el texto a cifrar</label>
+        <input type="text" id="originText" name="originText" required>
+        <label for="offset">Offset</label>
+        <input type="number" id="offset" name="offset" min="1" required>
+        <input type="button" name="generar" value="Generar" id="generate">
+        <input type="reset" name="reset">
+      </form>
+      <p id="result"></p>
+    </div>
+    <!--this block is for entering text for decoding-->
+     <div id="decodeBlock" class="none">
+      <form>
+        <label for="encText">Ingrese el texto a descifrar</label>
+        <input type="text" id="encText" name="encText" required>
+        <label for="encoffset">Offset</label>
+        <input type="number" id="encoffset" name="encoffset" min="1" required>
+        <input type="button" name="decodificar" value="Decodificar">
+        <input type="reset" name="reset">
+      </form>
+      <p id="result2"></p>
     </div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
