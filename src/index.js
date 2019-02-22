@@ -5,6 +5,7 @@ const decodeBlock = document.getElementById('decodeBlock');
 const generateBtn = document.getElementById('generate-btn');
 const decodeBtn = document.getElementById('decode-btn');
 const generateResult = document.getElementById('generate');
+const decodeResult = document.getElementById('decodificar');
 let encodeResult;
 /*events*/
 generateBtn.addEventListener('click', () => {
@@ -17,42 +18,32 @@ decodeBtn.addEventListener('click', () => {
 	hide(generateBlock);
 });
 
+generateResult.addEventListener('click', () => {
+	getValue('originText', 'offset');
+	cipher.encode(offset, text);
+	printResults(encodeResult, "result");
+});
+
+decodeResult.addEventListener('click', () => {
+	getValue('encText', 'encoffset');
+	cipher.decode(offset, text);
+	printResults(encodeResult, "result2");
+});
 /*functions*/
 //displays a block
-function show(myBlock) {
+const show = (myBlock) => {
 	myBlock.classList.remove('none');
 }
 //hides a block
-function hide(myBlock) {
+const hide = (myBlock) => {
 	myBlock.classList.add('none');
 }
-
-generateResult.addEventListener('click', () => {
-	const text = document.getElementById('originText').value;
-	const offset = document.getElementById('offset').value;
-	cipher.encode(text, offset);
-	printResults(encodeResult);
-});
-/*
-function getValue(mytext, myoffset) {
+//gets the input values (text and offset)
+const getValue = (mytext, myoffset) => {
 	text = document.getElementById(mytext).value;
 	offset = document.getElementById(myoffset).value;
-	console.log(text);
 }
-*/
-
-/*function encode(mytext, n) {
-	let encodeArr = [];
-	for(let i = 0; i < mytext.length; i++) {
-    	const charCode = mytext.charCodeAt(i);
-    	const transf = (charCode - 32 + parseInt(n)) % 95 + 32;
-    	encodeArr.push(String.fromCharCode(transf));
-    	encodeResult = encodeArr.join("")
-    }
-    console.log(encondeResult);
-    return encondeResult;
-}
-*/
-function printResults(str) {
-	document.getElementById('result').innerHTML = str;
+//prinst results DOM
+const printResults = (str, id) => {
+	document.getElementById(id).innerHTML = str;
 }
