@@ -4,38 +4,43 @@
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
   </head>
   <body>
-    <div id="root">
-      <h1>Generador de Mensajes Cifrados</h1>
-      <p>Este generador te permite cifrar y descrifar texto empleando un sistema de desplazamiento.</p>
-      <button id="generate-btn">Codificar</button>
-      <button id="decode-btn">Decodificar</button>
-    </div>
-    <!--this block is for entering the text for encoding-->
-    <div id="generateBlock" class="none">
+    <div id="root" class="container">
+      <div>
+        <h1>Generador de Mensajes Cifrados</h1>
+        <p>Este generador te permite cifrar y descrifar texto empleando un sistema de desplazamiento.</p>
+      </div>
+      
       <form>
-        <label for="originText">Ingrese el texto a cifrar</label>
-        <input type="text" id="originText" name="originText" required>
-        <label for="offset">Offset</label>
-        <input type="number" id="offset" name="offset" min="1" required>
-        <input type="button" name="generar" value="Generar" id="generate">
-        <input type="reset" name="reset">
+        <div>
+            <label for="offset">Clave de texto cifrado (número entero positivo mayor que 1)</label>
+            <input type="number" id="offset" name="offset" min="1" required>
+          </div>
+      <div class="flex-container">         
+      <!--beginning of encode block-->
+      <div>
+            <label for="text-to-encode" class="block">Texto:</label>
+            <textarea id="text-to-encode" class="block" name="text-to-encode" required></textarea>
+          <input id="encode" class="block" type="button" name="encode" value="Cifrar" >
+        
+      </div>
+      <!--end of the encode block -->
+      <!--beginning of decode block-->
+      <div>
+          <label for="text-to-decode" class="block">Texto Cifrado:</label>
+          <textarea id="text-to-decode" class="block" name="text-to-decode" required></textarea>
+          <input id="decode" class="block" type="button" name="decode" value="Decifrar"id="decode" >
+        
+      </div>
+      <!--end of the decode block -->
+       </div>
+       <input id="reset" class="block" type="reset" name="Reset">
       </form>
-      <p id="result"></p>
+     
     </div>
-    <!--this block is for entering text for decoding-->
-     <div id="decodeBlock" class="none">
-      <form>
-        <label for="encText">Ingrese el texto a descifrar</label>
-        <input type="text" id="encText" name="encText" required>
-        <label for="encoffset">Offset</label>
-        <input type="number" id="encoffset" name="encoffset" min="1" required>
-        <input type="button" name="decodificar" value="Decodificar" id="decodificar">
-        <input type="reset" name="reset">
-      </form>
-      <p id="result2"></p>
-    </div>
+    
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>

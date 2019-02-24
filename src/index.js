@@ -1,43 +1,21 @@
 
 /*vars*/
-const generateBlock = document.getElementById('generateBlock');
-const decodeBlock = document.getElementById('decodeBlock');
-const generateBtn = document.getElementById('generate-btn');
-const decodeBtn = document.getElementById('decode-btn');
-const generateResult = document.getElementById('generate');
-const decodeResult = document.getElementById('decodificar');
-let encodeResult;
+const encodeBtn = document.getElementById('encode');
+const decodeBtn = document.getElementById('decode');
+let result;
 /*events*/
-generateBtn.addEventListener('click', () => {
-	show(generateBlock);
-	hide(decodeBlock);
+encodeBtn.addEventListener('click', () => {
+	getValue('text-to-encode', 'offset');
+	cipher.encode(offset, text);
+	printResults(result, 'text-to-decode');
 });
 
 decodeBtn.addEventListener('click', () => {
-	show(decodeBlock);
-	hide(generateBlock);
-});
-
-generateResult.addEventListener('click', () => {
-	getValue('originText', 'offset');
-	cipher.encode(offset, text);
-	printResults(encodeResult, "result");
-});
-
-decodeResult.addEventListener('click', () => {
-	getValue('encText', 'encoffset');
+	getValue('text-to-decode', 'offset');
 	cipher.decode(offset, text);
-	printResults(encodeResult, "result2");
+	printResults(result, 'text-to-encode');
 });
 /*functions*/
-//displays a block
-const show = (myBlock) => {
-	myBlock.classList.remove('none');
-}
-//hides a block
-const hide = (myBlock) => {
-	myBlock.classList.add('none');
-}
 //gets the input values (text and offset)
 const getValue = (mytext, myoffset) => {
 	text = document.getElementById(mytext).value;
@@ -45,5 +23,7 @@ const getValue = (mytext, myoffset) => {
 }
 //prinst results DOM
 const printResults = (str, id) => {
-	document.getElementById(id).innerHTML = str;
+	document.getElementById(id).value = str;
 }
+
+
