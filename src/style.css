@@ -4,25 +4,49 @@ body {
 }
 
 .container {
-  width: 80%;
-  height: 90vh;
+  width: 90%;
   border: 1px solid #fff;
   text-align: center;
   margin: 20px auto;
+  padding-bottom: 30px;
   background-color: #fff;
 }
+ .details {
+  width: 80%;
+  margin: 0 auto;
+ }
 
 .flex-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 300px;
 }
 
-.flex-container div {
+.offset-div {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.offset-div div {
+  align-self: center;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px;
+  height: auto;
+}
+
+.offset-div p {
+  margin: 0;
+}
+
+.converter-div {
+  height: 300px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.converter-div div {
   align-self: center;
   height: 80%;
-  width: 40%;
+  width: 45%;
 }
 
 .block {
@@ -35,7 +59,7 @@ label {
 
 textarea {
   width: 100%;
-  height: 150px;
+  height: 200px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -44,6 +68,31 @@ textarea {
   font-size: 16px;
   resize: none;
 }
- #reset {
+
+#reset {
  	margin: 0 auto;
  }
+
+input[type=button], input[type=reset] {
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+ }
+
+input {
+   font-family: 'Lato', sans-serif;
+}
+/**responsive**/
+@media only screen and (max-width: 740px) {
+.converter-div {
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+
+.converter-div div {
+  width: 90%;
+}
+
+}

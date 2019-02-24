@@ -2,26 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
   </head>
   <body>
     <div id="root" class="container">
-      <div>
-        <h1>Generador de Mensajes Cifrados</h1>
-        <p>Este generador te permite cifrar y descrifar texto empleando un sistema de desplazamiento.</p>
+      <div class="details">
+        <h1>CipherCode</h1>
+        <h2>Generador de Mensajes Cifrados</h2>
+        <p>Encripta tus mensajes de una manera sencilla y segura. Genera diferentes cifrados para un mismo texto, tan solo ajustando la clave de cifrado.</p>
+        <p>Basta con solo con ingresar el texto a cifrar y la clave de cifrado, haces click en el botón Cifrar y ¡listo! obtienes tu texto encriptado. De manera similar para desencriptar.</p>
       </div>
       
       <form>
-        <div>
-            <label for="offset">Clave de texto cifrado (número entero positivo mayor que 1)</label>
-            <input type="number" id="offset" name="offset" min="1" required>
+        <div class="flex-container offset-div">
+          <div>
+            <label for="offset">CLAVE DE CIFRADO</label>
+            <input type="number" id="offset" name="offset" min="2" required>
           </div>
-      <div class="flex-container">         
+          <div>
+            <p>(número entero positivo mayor que 1)</p>
+          </div>  
+        </div>
+        
+      <div class="flex-container converter-div">         
       <!--beginning of encode block-->
       <div>
-            <label for="text-to-encode" class="block">Texto:</label>
+            <label for="text-to-encode" class="block">TEXTO:</label>
             <textarea id="text-to-encode" class="block" name="text-to-encode" required></textarea>
           <input id="encode" class="block" type="button" name="encode" value="Cifrar" >
         
@@ -29,7 +38,7 @@
       <!--end of the encode block -->
       <!--beginning of decode block-->
       <div>
-          <label for="text-to-decode" class="block">Texto Cifrado:</label>
+          <label for="text-to-decode" class="block">TEXTO CIFRADO:</label>
           <textarea id="text-to-decode" class="block" name="text-to-decode" required></textarea>
           <input id="decode" class="block" type="button" name="decode" value="Decifrar"id="decode" >
         
