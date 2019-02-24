@@ -53,6 +53,10 @@ body {
   display: block;
 }
 
+.none {
+  display: none;
+}
+
 label {
   text-align: left;
 }
@@ -72,6 +76,10 @@ textarea {
 #reset {
  	margin: 0 auto;
  }
+
+#error-message {
+	color: red;
+}
 
 input[type=button], input[type=reset] {
   background-color: #f8f8f8;

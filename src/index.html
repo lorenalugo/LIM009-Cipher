@@ -16,7 +16,7 @@
         <p>Basta con solo con ingresar el texto a cifrar y la clave de cifrado, haces click en el botón Cifrar y ¡listo! obtienes tu texto encriptado. De manera similar para desencriptar.</p>
       </div>
       
-      <form>
+      <form id="form">
         <div class="flex-container offset-div">
           <div>
             <label for="offset">CLAVE DE CIFRADO</label>
@@ -24,7 +24,8 @@
           </div>
           <div>
             <p>(número entero positivo mayor que 1)</p>
-          </div>  
+          </div> 
+          <p id="error-message" class="none">Debe ingresar una clave de cifrado</p> 
         </div>
         
       <div class="flex-container converter-div">         
@@ -45,7 +46,6 @@
       </div>
       <!--end of the decode block -->
        </div>
-       <input id="reset" class="block" type="reset" name="Reset">
       </form>
      
     </div>
