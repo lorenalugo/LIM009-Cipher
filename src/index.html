@@ -25,31 +25,24 @@
           <div>
             <p>(número entero positivo mayor que 1)</p>
           </div> 
-          <p id="error-message" class="none">Debe ingresar una clave de cifrado</p> 
         </div>
-        
-      <div class="flex-container converter-div">         
-      <!--beginning of encode block-->
-      <div>
-            <label for="text-to-encode" class="block">TEXTO:</label>
-            <textarea id="text-to-encode" class="block" name="text-to-encode" required></textarea>
-          <input id="encode" class="block" type="button" name="encode" value="Cifrar" >
-        
-      </div>
-      <!--end of the encode block -->
-      <!--beginning of decode block-->
-      <div>
-          <label for="text-to-decode" class="block">TEXTO CIFRADO:</label>
-          <textarea id="text-to-decode" class="block" name="text-to-decode" required></textarea>
-          <input id="decode" class="block" type="button" name="decode" value="Decifrar">
-        
-      </div>
-      <!--end of the decode block -->
-       </div>
+        <p id="error-message" class="none">Debe ingresar una clave de cifrado</p>
+        <div class="flex-container converter-div">   
+      <!--beginning of encode-decode block-->
+          <div>
+            <div class="flex-container">
+              <input id="encode" class="block active" type="button" name="encode" value="CIFRAR" >
+              <input id="decode" class="block" type="button" name="decode" value="DECIFRAR">
+            </div>
+            <textarea id="input-text" class="block box" name="text-to-encode" placeholder="Ingrese su mensaje" required></textarea> 
+          </div>
+      <!--end of the encode-decode block -->
+      <!--beginning of results block-->
+          <div id="result" class="box">Resultado</div>
+      <!--end of the results block -->
+        </div>
       </form>
-     
     </div>
-    
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>

@@ -6,8 +6,8 @@ window.cipher = {
     	const transf = (charCode - 32 + parseInt(offset)) % 95 + 32;//codes the character, gets the new ASCII code
     	encodeArr.push(String.fromCharCode(transf));//transforms the ASCII code to a character and pushes it into an array
     }
-   	result = encodeArr.join("");//converts the result array into a string
-   	return result;
+   	//result = encodeArr.join("");//converts the result array into a string
+   	return encodeArr.join("");
   },
   decode: (offset, string) => {
 	let encodeArr = [];
@@ -24,7 +24,7 @@ window.cipher = {
     	}
     	
     }
-   	result = encodeArr.join("");//converts the result array into a string
-   	return result;
+   	//result = encodeArr.join("");//converts the result array into a string
+   	return encodeArr.join("");
   }
 };

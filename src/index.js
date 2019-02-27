@@ -9,27 +9,31 @@ document.addEventListener("DOMContentLoaded", function(){
 S});
 
 encodeBtn.addEventListener('click', () => {
-	getValue('text-to-encode', 'offset');
+	toggleActiveClass(encodeBtn, decodeBtn);
+	getValue('input-text', 'offset');
 	if(offset === '') {
 		document.getElementById('error-message').classList.remove('none');
 	}
 	else {
 		document.getElementById('error-message').classList.add('none');	
 		cipher.encode(offset, text);
-		printResults(result, 'text-to-decode');	
+		result = cipher.encode(offset, text);
+		printResults(result, 'result');	
 	}
 	
 });
 
 decodeBtn.addEventListener('click', () => {
-	getValue('text-to-decode', 'offset');
+	toggleActiveClass(decodeBtn, encodeBtn);
+	getValue('input-text', 'offset');
 	if(offset === '') {
 		document.getElementById('error-message').classList.remove('none');
 	}
 	else {
 		document.getElementById('error-message').classList.add('none');
 		cipher.decode(offset, text);
- 		printResults(result, 'text-to-encode');	
+		result = cipher.decode(offset, text);
+ 		printResults(result, 'result');	
 	}
 	
 });
@@ -39,7 +43,12 @@ const getValue = (mytext, myoffset) => {
 	text = document.getElementById(mytext).value;
 	offset = document.getElementById(myoffset).value;
 }
-//prinst results DOM
+//prints results DOM
 const printResults = (str, id) => {
-	document.getElementById(id).value = str;
+	document.getElementById(id).innerHTML = str;
+}
+//toggles active class
+const toggleActiveClass = (add, remove) => {
+	add.classList.add('active');
+	remove.classList.remove('active');
 }
