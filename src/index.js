@@ -20,7 +20,6 @@ encodeBtn.addEventListener('click', () => {
 		result = cipher.encode(offset, text);
 		printResults(result, 'result');	
 	}
-	
 });
 
 decodeBtn.addEventListener('click', () => {
