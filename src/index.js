@@ -1,27 +1,26 @@
-
 /*vars*/
 const encodeBtn = document.getElementById('encode');
 const decodeBtn = document.getElementById('decode');
+let text;
+let offset;
 let result;
 /*events*/
 document.addEventListener("DOMContentLoaded", function(){
-  	document.getElementById('form').reset(); 
-S});
-
-encodeBtn.addEventListener('click', () => {
-	toggleActiveClass(encodeBtn, decodeBtn);
-	getValue('input-text', 'offset');
-	if(offset === '') {
-		document.getElementById('error-message').classList.remove('none');
-	}
-	else {
-		document.getElementById('error-message').classList.add('none');	
-		cipher.encode(offset, text);
-		result = cipher.encode(offset, text);
-		printResults(result, 'result');	
-	}
+	document.getElementById('form').reset(); 
 });
-
+encodeBtn.addEventListener('click', () => {
+  toggleActiveClass(encodeBtn, decodeBtn);
+  getValue('input-text', 'offset');
+  if(offset === '') {
+  document.getElementById('error-message').classList.remove('none');
+  }
+  else {
+    document.getElementById('error-message').classList.add('none');	
+    cipher.encode(offset, text);
+    result = cipher.encode(offset, text);
+    printResults(result, 'result');
+  }
+});
 decodeBtn.addEventListener('click', () => {
 	toggleActiveClass(decodeBtn, encodeBtn);
 	getValue('input-text', 'offset');
@@ -32,9 +31,8 @@ decodeBtn.addEventListener('click', () => {
 		document.getElementById('error-message').classList.add('none');
 		cipher.decode(offset, text);
 		result = cipher.decode(offset, text);
- 		printResults(result, 'result');	
+		printResults(result, 'result');
 	}
-	
 });
 /*functions*/
 //gets the input values (text and offset)
