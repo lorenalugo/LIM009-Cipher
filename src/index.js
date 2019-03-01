@@ -14,31 +14,45 @@ encodeBtn.addEventListener('click', () => {
   if(offset === '') {
   document.getElementById('error-message').classList.remove('none');
   }
-  else {
+  if(offset >= 0) {
     document.getElementById('error-message').classList.add('none');	
     cipher.encode(offset, text);
     result = cipher.encode(offset, text);
     printResults(result, 'result');
   }
+  if(offset < 0) {
+    document.getElementById('error-message').classList.add('none');
+    offset = Math.abs(offset);
+    cipher.decode(offset, text);
+    result = cipher.decode(offset, text);
+    printResults(result, 'result');
+  }
 });
 decodeBtn.addEventListener('click', () => {
-	toggleActiveClass(decodeBtn, encodeBtn);
-	getValue('input-text', 'offset');
-	if(offset === '') {
-		document.getElementById('error-message').classList.remove('none');
-	}
-	else {
-		document.getElementById('error-message').classList.add('none');
-		cipher.decode(offset, text);
-		result = cipher.decode(offset, text);
-		printResults(result, 'result');
-	}
+  toggleActiveClass(decodeBtn, encodeBtn);
+  getValue('input-text', 'offset');
+  if(offset === '') {
+    document.getElementById('error-message').classList.remove('none');
+  }
+  if(offset >= 0) {
+    document.getElementById('error-message').classList.add('none');
+    cipher.decode(offset, text);
+    result = cipher.decode(offset, text);
+    printResults(result, 'result');
+  }
+  if(offset < 0) {
+    document.getElementById('error-message').classList.add('none');	
+    offset = Math.abs(offset);
+    cipher.encode(offset, text);
+    result = cipher.encode(offset, text);
+    printResults(result, 'result');
+  }
 });
 /*functions*/
 //gets the input values (text and offset)
 const getValue = (mytext, myoffset) => {
 	text = document.getElementById(mytext).value;
-	offset = document.getElementById(myoffset).value;
+	offset = parseInt(document.getElementById(myoffset).value);
 }
 //prints results DOM
 const printResults = (str, id) => {
