@@ -1,26 +1,19 @@
-En el README.md, cuéntanos cómo pensaste en los usuarios y cuál fue tu proceso para definir el producto final a nivel de experiencia y de interfaz.
+CypherCode
+Generador de mensajes cifrados, primer proyecto del common core de Laboratoria.
 
-- Quiénes son los principales usuarios de producto.
-- Cuáles son los objetivos de estos usuarios en relación con tu producto.
-- Cómo crees que el producto que estás creando está resolviendo sus problemas.
+Estructura del proyecto
+Cuenta con un directorio src, donde se encuentra el index.html con toda la estructura HTML. También index.js donde se encuentra los eventos del DOM y variables. Style.css con los estilos del proyecto y el responsive. En el cypher.js es el módulo donde se guarda la funcionalidad del cifrado y decifrado.
 
-* `README.md`: debe explicar cómo descargar, instalar y ejecutar la aplicación
-  así como una introducción a la aplicación, su funcionalidad y decisiones de
-  diseño que tomaron.
+Características
+Permite cifrar y decifrar textos.
+Permite obtener diferentes cifrados para un mismo texto, cambiando solamente la clave de cifrado (offset).
 
-## Parte opcional o “Hacker edition”
 
-La descripción general de este proyecto no menciona qué pasaría con las letras minúsculas y otros caracteres (como espacios, puntuación, ñ, ...). El boilerplate incluye algunos tests (comentados en principio) que puedes usar como punto de partida para implementar el soporte para estos casos.
+Tecnologías utilizadas
+El proyecto se encuentra desarrollado con javascript, css y html.
 
-Tampoco se menciona qué pasaría si el offset fuera negativo. Como parte del hacker edition te invitamos a explorar también esta caso por tu cuenta.
-
-### Parte Obligatoria
-
-* [ ] `README.md` incluye info sobre proceso y decisiones de diseño.
-* [ ] `README.md` explica claramente quiénes son los usuarios y su relación con el producto.
-* [ ] `README.md` explica claramente cómo el producto soluciona los problemas/necesidades de los usuarios.
-
-### Parte Opcional: "Hacker edition"
-
-* [ ] Cifra/descifra _otros_ caracteres (espacios, puntuación, `ñ`, `á`, ...)
-* [ ] Permite usar un `offset` negativo.
+Usuarios
+Este proyecto está dirigido a periodistas y activistas de los derechos humanos, los cuales envían y reciben información de clasificada o de riesgo, y necesitan mantener tales comunicaciones secretas por razones de seguridad personal y filtración de información.
+Este generador de mensajes cifrados permite cifrar información y variar el patrón de cifrado, lo cual resulta útil para estos fines.
+La interfaz permite ingresar una clave de cifrado, y el texto a cifrar (o decifrar), y seleccionar el proceso a realizar (cifrar o decifrar) para posteriormente hacer copy and paste en el documento a enviar o email.
+Es una interfaz sencilla, minimalista, con colores sobrios, debido a que el público a quien va dirigido es muy específico, a los cuales les interesa solamente cifrar o decifrar una información. 
