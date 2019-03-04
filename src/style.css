@@ -1,15 +1,23 @@
 body {
-  background-color: #000;
+  background-color: #1F485B;
   font-family: 'Lato', sans-serif;
+  color: #1F485B;
+}
+
+h1, h2, h3 {
+  color: #122934;
 }
 
 .container {
   width: 90%;
   border: 1px solid #fff;
   text-align: center;
-  margin: 20px auto;
+  margin: 30px auto;
   padding-bottom: 30px;
   background-color: #fff;
+  -webkit-box-shadow: 0px 6px 20px 10px #050B0E;
+  -moz-box-shadow: 0px 6px 20px 10px #050B0E;
+  box-shadow: 0px 6px 20px 10px #050B0E;
 }
  .details {
   width: 80%;
@@ -57,6 +65,10 @@ form p {
   display: none;
 }
 
+.color-result {
+  color: #000 !important;
+}
+
 label {
   text-align: left;
 }
@@ -75,7 +87,7 @@ textarea {
   font-size: 16px;
   resize: none;
 }
-#result {
+.result {
 	margin-top: 43px;
 	text-align: left;
 	width: 32%;
@@ -89,7 +101,7 @@ textarea {
  }
 
 #error-message {
-	color: red;
+	color: #DF013A;
 }
 
 input[type=button] {

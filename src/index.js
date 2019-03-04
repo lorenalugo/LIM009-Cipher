@@ -14,7 +14,7 @@ encodeBtn.addEventListener('click', () => {
   if(offset === '') {
   document.getElementById('error-message').classList.remove('none');
   }
-  if(offset >= 0) {
+  if(offset > 0) {
     document.getElementById('error-message').classList.add('none');	
     cipher.encode(offset, text);
     result = cipher.encode(offset, text);
@@ -34,7 +34,7 @@ decodeBtn.addEventListener('click', () => {
   if(offset === '') {
     document.getElementById('error-message').classList.remove('none');
   }
-  if(offset >= 0) {
+  if(offset > 0) {
     document.getElementById('error-message').classList.add('none');
     cipher.decode(offset, text);
     result = cipher.decode(offset, text);
@@ -52,11 +52,12 @@ decodeBtn.addEventListener('click', () => {
 //gets the input values (text and offset)
 const getValue = (mytext, myoffset) => {
 	text = document.getElementById(mytext).value;
-	offset = parseInt(document.getElementById(myoffset).value);
+	offset = document.getElementById(myoffset).value;
 }
 //prints results DOM
 const printResults = (str, id) => {
 	document.getElementById(id).innerHTML = str;
+  document.getElementById(id).classList.add('color-result');
 }
 //toggles active class
 const toggleActiveClass = (add, remove) => {
