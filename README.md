@@ -1,4 +1,4 @@
-# CypherCode
+# CipherCode
 
 Generador de mensajes cifrados, primer proyecto del common core de Laboratoria.
 
