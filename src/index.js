@@ -11,17 +11,13 @@ document.addEventListener("DOMContentLoaded", function(){
 encodeBtn.addEventListener('click', () => {
   toggleActiveClass(encodeBtn, decodeBtn);
   getValue('input-text', 'offset');
-  if(offset === '') {
-  document.getElementById('error-message').classList.remove('none');
-  }
+  showErrorMessage(offset);
   if(offset > 0) {
-    document.getElementById('error-message').classList.add('none');	
     cipher.encode(offset, text);
     result = cipher.encode(offset, text);
     printResults(result, 'result');
   }
   if(offset < 0) {
-    document.getElementById('error-message').classList.add('none');
     offset = Math.abs(offset);
     cipher.decode(offset, text);
     result = cipher.decode(offset, text);
@@ -31,17 +27,13 @@ encodeBtn.addEventListener('click', () => {
 decodeBtn.addEventListener('click', () => {
   toggleActiveClass(decodeBtn, encodeBtn);
   getValue('input-text', 'offset');
-  if(offset === '') {
-    document.getElementById('error-message').classList.remove('none');
-  }
+  showErrorMessage(offset);
   if(offset > 0) {
-    document.getElementById('error-message').classList.add('none');
     cipher.decode(offset, text);
     result = cipher.decode(offset, text);
     printResults(result, 'result');
   }
   if(offset < 0) {
-    document.getElementById('error-message').classList.add('none');	
     offset = Math.abs(offset);
     cipher.encode(offset, text);
     result = cipher.encode(offset, text);
@@ -63,4 +55,13 @@ const printResults = (str, id) => {
 const toggleActiveClass = (add, remove) => {
 	add.classList.add('active');
 	remove.classList.remove('active');
+}
+//shows or hides error message when offset is missing
+const showErrorMessage = (offset) => {
+  if(offset === '') {
+    document.getElementById('error-message').classList.remove('none');
+  }
+  else {
+    document.getElementById('error-message').classList.add('none');
+  }
 }

@@ -6,30 +6,33 @@
     <title>CipherCode</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
   <body>
-    <div id="root" class="container">
-      <div class="details">
-        <h1>CipherCode</h1>
+    <header class="container white-bg margin-auto">
+      <h1>CipherCode</h1>
+    </header>
+    <main id="root" class="container white-bg margin-auto">
+      <div class="details margin-auto">
         <h2>Generador de Mensajes Cifrados</h2>
         <p>Encripta tus mensajes de una manera sencilla y segura. Genera diferentes cifrados para un mismo texto, tan solo ajustando la clave de cifrado.</p>
         <p>Basta con solo con ingresar el texto a cifrar y la clave de cifrado, haces click en el botón Cifrar y ¡listo! obtienes tu texto encriptado. De manera similar para desencriptar.</p>
       </div>
       
       <form id="form">
-        <div class="flex-container offset-div">
-          <div>
+        <div class="flex-container offset-div margin-auto">
+          <div class="block">
             <label for="offset">CLAVE DE CIFRADO</label>
             <input type="number" id="offset" name="offset" required>
           </div>
         </div>
-        <p id="error-message" class="none">Debe ingresar una clave de cifrado</p>
+        <p id="error-message" class="none margin-auto">Debe ingresar una clave de cifrado</p>
         <div class="flex-container converter-div">   
       <!--beginning of encode-decode block-->
           <div>
             <div class="flex-container">
-              <input id="encode" class="block active" type="button" name="encode" value="CIFRAR" >
-              <input id="decode" class="block" type="button" name="encode" value="DECIFRAR">
+              <input id="encode" class="white-bg block active" type="button" name="encode" value="CIFRAR" >
+              <input id="decode" class="white-bg block" type="button" name="encode" value="DECIFRAR">
             </div>
             <textarea id="input-text" class="block box" name="encode" placeholder="Ingrese su mensaje" required></textarea> 
           </div>
@@ -39,7 +42,8 @@
       <!--end of the results block -->
         </div>
       </form>
-    </div>
+    </main>
+    <footer class="container white-bg margin-auto">Created with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i> by Lorena Lugo</footer>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
